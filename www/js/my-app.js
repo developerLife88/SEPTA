@@ -282,6 +282,7 @@ function openModal(Sindex){
 
      function passN(number){
                 $$.ajax({
+                      myApp.hidePreloader();
                     type: 'GET',
                     dataType: "jsonp",
                     url:"http://www3.septa.org/hackathon/Arrivals/" + number + "/10/",
