@@ -1,0 +1,151 @@
+
+.statusbar-overlay {
+    background: #000000;
+}
+
+
+
+.layout-dark .panel{
+    background-color: black;
+    color: #ddd;
+    box-shadow: 0 0 5px black !important;
+}
+
+.content-block{
+    
+    padding:0 !important;
+}
+
+
+.list-block{
+    text-align: center;
+}
+
+
+.text-center{
+    text-align:center;
+}
+
+
+.button {
+ background-color: red !important; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, #f13b63 , #f55615) !important; /* Standard syntax (must be last) */
+color:#f2f2f2!important;   
+border: 2px solid #222426 !important;
+height:50px;    
+padding: 12px;
+font-size: 16px !important; 
+    width: 97% !important;
+    height: auto !important;
+    margin: auto !important;
+    border-radius: 11px;
+}
+
+#stations{
+    border: 1px solid gray;
+    padding-left:10%;
+}
+
+#stations:after{
+    content: '\25BD';
+}
+
+.philiTable
+            {
+                font-size: 12px !important;
+                width: 100% !important;
+            }
+
+.philiTable tr:first-child{
+  background: #dc3545 !important;
+    color:#f2f2f2;
+}
+           .philiTable tr:nth-child(even){
+            
+                background-color:  #262626;
+                color: #f2f2f2;
+                
+            }
+
+           .philiTable tr:nth-child(odd){
+            
+                background-color: #1a1a1a;
+                color: #f2f2f2;
+            }
+
+            
+             table, th, td, tr
+            {
+                border: 1px solid #222426;
+                border-collapse: collapse;
+                padding:5px;
+                 color:#f2f2f2;
+            }
+
+
+.far, .fas{
+    font-size:21px;
+}
+
+
+.loader {
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.modal-inner {
+    background-color: #e8e6e5 !important;
+    /* background-image: linear-gradient(to right, #f13b63 , #f55615) !important; */
+    color: #c44949!important;
+}
+.modal-button {
+    color: #d02f51 !important;
+}
+
+.mt-50{
+    margin-top: 50px !important;
+    font-size: 15px !important;
+    font-weight: bold;
+}
+
+#stationLIST li{
+background: #78ba11;
+    color: white;
+    padding:15px;
+    text-shadow: 0 0 1px gray;
+    margin-top: 21px;
+    margin-bottom: 21px;
+    text-align: left;
+    border-radius: 5px;
+    font-size: 21px !important;
+}
+
+
+.newColor{
+    float: right;
+    color: white;
+    text-shadow: 0 0 0.5px gray;
+}
+
+.popup {
+  background: #1b1c1e !important;
+}
+
+
+.fa-trash-alt{
+    font-size: 31px;
+}
+.x{
+    font-weight: bold;
+}

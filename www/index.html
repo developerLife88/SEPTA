@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+<!-----------------------------------------------------------------------> 
+<!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval' " />-->
+ <!-----------------------------------------------------------------------> 
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+ <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Your app title -->
+    <title>SEPTA Transportation Authority</title>
+
+
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+   
+</head>
+
+<body class="layout-dark theme-white">
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal" style="box-shadow:0 0 5px black;">
+        
+    </div>
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="center sliding">SEPTA Transportation Authority</div>
+                    <div class="right">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="content-block">
+<!--------------------------- Content goes here -------------------------->
+     <!-- Tabs wrapper, shoud have "tabs" class. Required element -->
+<div class="tabs">
+  <!-- First tab, should have "tab" class and unique id attribute -->
+  <!-- First tab is active by default - additional "active" class -->
+  <div class="tab active" id="tab1">
+     <div class="list-block"> 
+        <label for="stations">Select Station then tap Get Schedule </label>
+          <select id="stations"> </select>    
+        </div>    
+
+      <div class="row no-gutter">
+    <!-- Each "cell" has col-[widht in percents] class -->
+    <div class="col-50"><a id="fetchTrainDetails" class="button active link">Get Schedule <br><i class="far fa-calendar-alt"></i> <i class="fas fa-spinner loader" style="display: none;"></i></a></div>
+    <div class="col-50"><a id="bookmark" class="button active link">Bookmark staion <br> <i class="far fa-bookmark"></i></a></div>
+</div> 
+        
+        <div id="schedule"></div>  
+  </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <!-- Second tab, should have "tab" class and unique id attribute -->
+  <div class="tab" id="tab2">
+      <div class="content-block text-center">
+          <p>Tap station name to open / tap trash to remove from the bookmark </p>  
+        <div class="list-block"><ul id="stationLIST"></ul> 
+        </div>    
+      </div>
+  </div>
+    
+    
+    
+    
+  <!-- Third tab, should have "tab" class and unique id attribute -->
+  <div class="tab" id="tab3">
+  <div class="content-block text-center" style="padding-left:10px !important; padding-right: 10px !important;">
+            <h2 class="text-center" style="padding-top:50px;">Southeastern Pennsylvania Trains Schedule </h2>
+          <center><i class="fas fa-subway" style="font-size: 33px;"></i></center>
+            <br>
+            <b>Regional Rail Station Arrivals &amp; Departures </b>
+                <br>
+            <p>This App returns a list/queue of trains scheduled to arrive at a station. The direction is demarcated as either Northbound or Southbound.</p>
+            
+                        <br><br>
+      <b><div class="text-center mt-5">Made by Nasser Jeary</div></b>
+        </div>
+  </div>
+</div> 
+                                     
+<!------------------------------------------------------------------------->                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <!-- Bottom Toolbar--------------------------------------------->  
+          <div class="toolbar tabbar tabbar-labels">
+    <div class="toolbar-inner">
+        <a href="#tab1" class="tab-link active close-popup">
+            <i class="fas fa-subway"></i>
+            <span class="tabbar-label">Trains &amp; Schedule</span>
+        </a>
+        <a href="#tab2" class="tab-link close-popup">
+           <i class="far fa-star"></i>
+            <span class="tabbar-label">Bookmark<span id="SBM" class="badge bg-red">0</span></span>
+        </a>
+        <a href="#tab3" class="tab-link close-popup">
+           <i class="fas fa-info-circle"></i>
+            <span class="tabbar-label">About App</span>
+        </a>
+    </div>
+</div>
+<!------------------------------------------------------->  
+
+        </div>
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-------------------------- update user displayname and email----------------------->
+<div class="popup popup-about m1">
+    <div class="content-block">
+    <button href="#" class="close-popup button x">X</button>     
+<div id="schedule2"></div> 
+    </div>
+  </div>
+<!------------------end of popup------------------------------------>
+  
+    
+    
+ 
+    
+    
+    
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script src="js/stations.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    
+</body>
+
+</html>
