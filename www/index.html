@@ -65,9 +65,11 @@
 <!--------------------------- Content goes here -------------------------->
      <!-- Tabs wrapper, shoud have "tabs" class. Required element -->
 <div class="tabs">
+    
   <!-- First tab, should have "tab" class and unique id attribute -->
   <!-- First tab is active by default - additional "active" class -->
   <div class="tab active" id="tab1">
+    <div class="content-block">
      <div class="list-block"> 
         <label for="stations">Select Station then tap Get Schedule </label>
           <select id="stations"> </select>    
@@ -81,7 +83,7 @@
         
         <div id="schedule"></div>  
   </div>
-    
+   </div>  
     
     
     
@@ -94,16 +96,18 @@
     
   <!-- Second tab, should have "tab" class and unique id attribute -->
   <div class="tab text-center" id="tab2">
+      <div class="content-block">
           <p>Tap station name to open / tap trash to remove from the bookmark </p>  
         <div class="list-block"><ul id="stationLIST"></ul> 
         </div>      
   </div>
-    
+    </div>  
     
     
     
   <!-- Third tab, should have "tab" class and unique id attribute -->
   <div class="tab" id="tab3">
+    <div class="content-block">  
             <h2 class="text-center"  style="padding-left:10px !important; padding-right: 10px !important; padding-top:50px;">Southeastern Pennsylvania Trains Schedule </h2>
           <center><i class="fas fa-subway" style="font-size: 33px;"></i></center>
             <br>
@@ -116,7 +120,7 @@
        
   </div>
 </div> 
-                                     
+</div>                                     
 <!------------------------------------------------------------------------->                            
                         </div>
                     </div>
