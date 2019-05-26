@@ -281,6 +281,7 @@ function openModal(Sindex){
 
 
      function passN(number){
+         myApp.showPreloader("Loading"); 
                 $$.ajax({
                     type: 'GET',
                     dataType: "jsonp",
