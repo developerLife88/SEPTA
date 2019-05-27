@@ -11,8 +11,9 @@
     box-shadow: 0 0 5px black !important;
 }
 
+
 .content-block{
-    
+    margin: 0 !important;
     padding:0 !important;
 }
 

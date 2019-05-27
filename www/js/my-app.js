@@ -100,9 +100,9 @@ AddStaionToLcalStorage(staionOBJ);
             if(northbound == null){
                console.log("array is empty");
                 myApp.alert('No trains at this time', 'SEPTA Transportation Authority');
-                myApp.hidePreloader();
                 $$('#schedule').append('<div class="text-center mt-50">No Northbound trains at this time</div>');
-               }
+                myApp.hidePreloader();
+               }else{
                 for(var i=0; i < northbound.length; i++)
                 {
 
@@ -116,7 +116,7 @@ AddStaionToLcalStorage(staionOBJ);
                     </tr>
                    `;
                 }
-               
+               }
                 output += "</table>";
                 $$('#schedule').append(output); /*--- instead of innerHTML += ---*/ 
                 myApp.hidePreloader();
@@ -133,7 +133,8 @@ AddStaionToLcalStorage(staionOBJ);
             if(southbound == null){
                console.log("array is empty");
                 $$('#schedule').append('<div class="text-center mt-50">No Southbound trains at this time</div>');
-               }
+                myApp.hidePreloader();
+               }else{
                 for(var i=0; i < southbound.length; i++)
                 {
                  
@@ -147,6 +148,7 @@ AddStaionToLcalStorage(staionOBJ);
                     </tr>
                    `;
                 }
+               }
             output2 += "</table>";
             
             $$('#schedule').append(output2); 
@@ -260,6 +262,8 @@ station.splice(index, 1);
 
 
 function openModal(Sindex){
+    
+ 
       myApp.popup('.m1');
     var pickedStation = 0;
     
@@ -270,25 +274,34 @@ function openModal(Sindex){
     console.log("this is station number: " + pickedStation.number);
    let number = pickedStation.number
     passN(number);
-    
+       
           };// end of open modal
 
+ 
+/*-----------solving the tab issue when they scroll together---*/
+  $('#tab3').on('click', function(){
+  $('.page-content').css('overflow', 'unset');              
+          });
+$('#tab1').on('click', function(){
+$('.page-content').css('overflow', 'scroll');  
+       });
 
-
-
+$('#tab2').on('click', function(){
+$('.page-content').css('overflow', 'scroll');  
+       });
+ /*-----------------------------------------*/
 
 
 
 
      function passN(number){
+         myApp.showPreloader("Loading");
          
-         myApp.showPreloader("Loading"); 
                 $$.ajax({
                     type: 'GET',
                     dataType: "jsonp",
                     url:"http://www3.septa.org/hackathon/Arrivals/" + number + "/10/",
                     success: function(result2){
-                    myApp.showPreloader();
                     $$('#schedule2').html("");  // first
                      console.log(result2);
                      parseJSONforBookedStation(result2);   // second
@@ -314,17 +327,17 @@ function openModal(Sindex){
                 output += "<tr><th>Train<br><i class='fas fa-subway'></i></th><th>Time <br><i class='far fa-clock'></i></th><th>Destination<br><i class='fas fa-map-signs'></i></th><th>Service<br><i class='fas fa-file-signature'></i></th><th>Status<br><i class='fas fa-hourglass-half'></i></th></tr>";
             
                 /*----- JSON.parse ----*/
-                var data = JSON.parse(result2);
-                var arr = data[Object.keys(data)];
-                var northbound = arr[0].Northbound;
+                let data = JSON.parse(result2);
+                let arr = data[Object.keys(data)];
+                let northbound = arr[0].Northbound;
             //console.log(northbound.length);
             if(northbound == null){
                console.log("array is empty");
                 myApp.alert('No trains at this time', 'SEPTA Transportation Authority');
                 myApp.hidePreloader();
                 $$('#schedule2').append('<div class="text-center mt-50">No Northbound trains at this time</div>');
-               }
-                for(var i=0; i < northbound.length; i++)
+               }else{
+                for(let i=0; i < northbound.length; i++)
                 {
 
                         output +=  ` 
@@ -337,7 +350,7 @@ function openModal(Sindex){
                     </tr>
                    `;
                 }
-               
+               }
                 output += "</table>";
                 $$('#schedule2').append(output); /*--- instead of innerHTML += ---*/ 
                 myApp.hidePreloader();
@@ -347,14 +360,17 @@ function openModal(Sindex){
             
             
             
-                var southbound = arr[1].Southbound;
-                var output2 = "<br><center><h3>Southbound</h3></center>";
+                let southbound = arr[1].Southbound;
+                let output2 = "<br><center><h3>Southbound</h3></center>";
                 output2 += "<table class='philiTable'>";
                 output2 += "<tr><th>Train <br><i class='fas fa-subway'></i></th><th>Time <br><i class='far fa-clock'></i></th><th>Destination<br><i class='fas fa-map-signs'></i></th><th>Service<br><i class='fas fa-file-signature'></i></th><th>Status<br><i class='fas fa-hourglass-half'></i></th></tr>";
             if(southbound == null){
                console.log("array is empty");
+                 myApp.alert('No Southbound trains at this time', 'SEPTA Transportation Authority');
+                myApp.hidePreloader();
                 $$('#schedule2').append('<div class="text-center mt-50">No Southbound trains at this time</div>');
-               }
+                  
+               }else{
                 for(var i=0; i < southbound.length; i++)
                 {
                  
@@ -368,6 +384,7 @@ function openModal(Sindex){
                     </tr>
                    `;
                 }
+               }
             output2 += "</table>";
             
             $$('#schedule2').append(output2); 
