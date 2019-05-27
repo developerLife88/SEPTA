@@ -63,15 +63,15 @@
                     <div class="page-content">
                         <div class="content-block">
 <!--------------------------- Content goes here -------------------------->
-     <!-- Tabs wrapper, shoud have "tabs" class. Required element -->
-<div class="tabs">
+     <div class="tabs-animated-wrap">
+        <div class="tabs">
     
   <!-- First tab, should have "tab" class and unique id attribute -->
   <!-- First tab is active by default - additional "active" class -->
   <div class="tab active" id="tab1">
     <div class="content-block">
      <div class="list-block"> 
-        <label for="stations">Select Station then tap Get Schedule </label>
+        <label for="stations" id="s1">Select Station then tap Get Schedule </label>
           <select id="stations"> </select>    
         </div>    
 
@@ -97,7 +97,7 @@
   <!-- Second tab, should have "tab" class and unique id attribute -->
   <div class="tab text-center" id="tab2">
       <div class="content-block">
-          <p>Tap station name to open / tap trash to remove from the bookmark </p>  
+          <p id="s2">Tap station name to open / tap trash to remove from the bookmark </p>  
         <div class="list-block"><ul id="stationLIST"></ul> 
         </div>      
   </div>
@@ -110,7 +110,7 @@
   <!-- Third tab, should have "tab" class and unique id attribute -->
   <div class="tab" id="tab3">
     <div class="content-block text-center">  
-            <h2 class="text-center"  style="padding-left:10px !important; padding-right: 10px !important; padding-top:50px;">Southeastern Pennsylvania Trains Schedule </h2>
+            <h2 class="text-center" id="s3" style="padding-left:10px !important; padding-right: 10px !important; padding-top:50px;">Southeastern Pennsylvania Trains Schedule </h2>
           <center><i class="fas fa-subway" style="font-size: 33px;"></i></center>
             <br>
             <b>Regional Rail Station Arrivals &amp; Departures </b>
@@ -122,7 +122,8 @@
        
   </div>
 </div> 
-</div>                                     
+</div>
+</div>         
 <!------------------------------------------------------------------------->                            
                         </div>
                     </div>
@@ -131,15 +132,15 @@
               <!-- Bottom Toolbar--------------------------------------------->  
           <div class="toolbar tabbar tabbar-labels">
     <div class="toolbar-inner">
-        <a href="#tab1" class="tab-link active close-popup">
+        <a href="#tab1" id="t1" class="tab-link active close-popup">
             <i class="fas fa-subway"></i>
             <span class="tabbar-label">Trains &amp; Schedule</span>
         </a>
-        <a href="#tab2" class="tab-link close-popup">
+        <a href="#tab2" id="t2" class="tab-link close-popup">
            <i class="far fa-star"></i>
             <span class="tabbar-label">Bookmark<span id="SBM" class="badge bg-red">0</span></span>
         </a>
-        <a href="#tab3" class="tab-link close-popup">
+        <a href="#tab3" id="t3" class="tab-link close-popup">
            <i class="fas fa-info-circle"></i>
             <span class="tabbar-label">About App</span>
         </a>
