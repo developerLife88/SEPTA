@@ -33,17 +33,17 @@
   background-image: linear-gradient(to right, #f13b63 , #f55615) !important; /* Standard syntax (must be last) */
 color:#f2f2f2!important;   
 border: 2px solid #222426 !important;
-height:50px;    
-padding: 12px;
+height:31px;    
+padding: 7px;
 font-size: 16px !important; 
-    width: 97% !important;
+    width: 91% !important;
     height: auto !important;
     margin: auto !important;
-    border-radius: 11px;
+    border-radius: 5px;
 }
 
 #stations{
-    border: 1px solid gray;
+    border: 1px solid #f59f91;
     padding-left:10%;
 }
 
@@ -149,4 +149,13 @@ background: #78ba11;
 }
 .x{
     font-weight: bold;
+}
+
+.list-block {
+    margin: 0 !important;
+    font-size: 17px;
+}
+
+.navbar-inner{
+    padding: 0px !important;
 }

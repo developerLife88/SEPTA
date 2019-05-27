@@ -43,17 +43,28 @@
         <div class="view view-main">
             <!-- Top Navbar-->
             <div class="navbar">
-                <div class="navbar-inner">
+<!--                <div class="navbar-inner">-->
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">SEPTA Transportation Authority</div>
-                    <div class="right">
-                        <!--
-                          Right link contains only icon - additional "icon-only" class
-                          Additional "open-panel" class tells app to open panel when we click on this link
-                        -->
-                        
-                    </div>
+<div class="row no-gutter">
+    <div class="col-50">
+    <div class="list-block" > 
+    <select id="stations" style="border-radius: 5px;"> </select>    
+    </div> 
+    </div>
+    <div class="col-50">
+    <a id="fetchTrainDetails" class="button active link" style="padding:10px;line-height: 0; width: 100% !important;">Get Schedule <br><i class="far fa-calendar-alt"></i> 
+    </a>
+    </div> 
+</div> 
+                    
+                    
+        
+<!--
+               <div class="right">
+                   <a id="fetchTrainDetails" class="button active link" style="padding:0px;">Get Schedule <br><i class="far fa-calendar-alt"></i> <i class="fas fa-spinner loader" style="display: none;"></i></a>
                 </div>
+-->
+<!--                </div>-->
             </div>
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
             <div class="pages navbar-through toolbar-through">
@@ -69,17 +80,15 @@
   <!-- First tab, should have "tab" class and unique id attribute -->
   <!-- First tab is active by default - additional "active" class -->
   <div class="tab active" id="tab1">
-    <div class="content-block">
-     <div class="list-block"> 
-        <label for="stations" id="s1">Select Station then tap Get Schedule </label>
-          <select id="stations"> </select>    
-        </div>    
+    <div class="content-block" style="height:550px; overflow-y: scroll;">
+       
 
-      <div class="row no-gutter">
-    <!-- Each "cell" has col-[widht in percents] class -->
-    <div class="col-50"><a id="fetchTrainDetails" class="button active link">Get Schedule <br><i class="far fa-calendar-alt"></i> <i class="fas fa-spinner loader" style="display: none;"></i></a></div>
-    <div class="col-50"><a id="bookmark" class="button active link">Bookmark staion <br> <i class="far fa-bookmark"></i></a></div>
-</div> <br>
+     
+   <br>
+   <a id="bookmark" class="button active link" >
+       Bookmark Current Staion 
+       <i class="far fa-bookmark"></i></a>
+        <br>
         
         <div id="schedule"></div>  
   </div>
@@ -96,9 +105,9 @@
     
   <!-- Second tab, should have "tab" class and unique id attribute -->
   <div class="tab text-center" id="tab2">
-      <div class="content-block">
+      <div class="content-block" style="height:550px; overflow-y: scroll;">
           <p id="s2">Tap station name to open / tap trash to remove from the bookmark </p>  
-        <div class="list-block"><ul id="stationLIST"></ul> 
+        <div class="list-block"><ul id="stationLIST" ></ul> 
         </div>      
   </div>
     </div>  
