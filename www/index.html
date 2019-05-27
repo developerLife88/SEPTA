@@ -42,20 +42,10 @@
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
             <!-- Top Navbar-->
-            <div class="navbar">
+<!--            <div class="navbar">-->
 <!--                <div class="navbar-inner">-->
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-<div class="row no-gutter">
-    <div class="col-50">
-    <div class="list-block" > 
-    <select id="stations" style="border-radius: 5px;"> </select>    
-    </div> 
-    </div>
-    <div class="col-50">
-    <a id="fetchTrainDetails" class="button active link" style="padding:10px;line-height: 0; width: 100% !important;">Get Schedule <br><i class="far fa-calendar-alt"></i> 
-    </a>
-    </div> 
-</div> 
+
                     
                     
         
@@ -65,13 +55,13 @@
                 </div>
 -->
 <!--                </div>-->
-            </div>
+<!--            </div>-->
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
             <div class="pages navbar-through toolbar-through">
                 <!-- Page, "data-page" contains page name -->
                 <div data-page="index" class="page">
                     <!-- Scrollable page content -->
-                    <div class="page-content">
+                    <div class="page-content" style="padding-top: 3px;">
                         <div class="content-block">
 <!--------------------------- Content goes here -------------------------->
      <div class="tabs-animated-wrap">
@@ -80,13 +70,23 @@
   <!-- First tab, should have "tab" class and unique id attribute -->
   <!-- First tab is active by default - additional "active" class -->
   <div class="tab active" id="tab1">
-    <div class="content-block" style="height:550px; overflow-y: scroll;">
+    <div class="row ">
+    <div class="col-50">
+    <div class="list-block" > 
+    <select id="stations" style="border:2px solid #b12b16;border-radius: 5px;"> </select>    
+    </div> 
+    </div>
+    <div class="col-50">
+    <a id="fetchTrainDetails" class="button active link" style="padding:10px;line-height: 0; width: 100% !important;">Get Schedule &#160;<i class="far fa-calendar-alt"></i> 
+    </a>
+    </div> 
+</div>   
+    <div class="content-block" style="height:550px; overflow-y: scroll; padding-bottom:7px;">
        
 
-     
-   <br>
+<h3 class="text-center">Choose station then tap Get Schedule</h3>
    <a id="bookmark" class="button active link" >
-       Bookmark Current Staion 
+       Bookmark Current Staion &#160;
        <i class="far fa-bookmark"></i></a>
         <br>
         
@@ -105,7 +105,7 @@
     
   <!-- Second tab, should have "tab" class and unique id attribute -->
   <div class="tab text-center" id="tab2">
-      <div class="content-block" style="height:550px; overflow-y: scroll;">
+      <div class="content-block" style="height:550px; overflow-y: scroll;padding-bottom:7px;">
           <p id="s2">Tap station name to open / tap trash to remove from the bookmark </p>  
         <div class="list-block"><ul id="stationLIST" ></ul> 
         </div>      

@@ -58,7 +58,7 @@ font-size: 16px !important;
             }
 
 .philiTable tr:first-child{
-  background: #dc3545 !important;
+  background: #5c273c !important;
     color:#f2f2f2;
 }
            .philiTable tr:nth-child(even){
@@ -121,9 +121,9 @@ font-size: 16px !important;
 }
 
 #stationLIST li{
-background: #78ba11;
+background: #72a91d;
     color: white;
-    padding:15px;
+    padding:7px;
     text-shadow: 0 0 1px gray;
     margin-top: 21px;
     margin-bottom: 21px;
@@ -146,6 +146,7 @@ background: #78ba11;
 
 .fa-trash-alt{
     font-size: 31px;
+    margin-right:21px;
 }
 .x{
     font-weight: bold;
