@@ -278,21 +278,36 @@ function openModal(Sindex){
           };// end of open modal
 
  
-/*-----------solving the tab issue when they scroll together---*/
-  $('#t3').on('click', function(){
-  $('.page-content').css('overflow', 'unset');  
-          });
-$('#t1').on('click', function(){ 
-$('.page-content').css('overflow', 'unset');     
-$('.page-content').css('overflow', 'scroll');  
-       });
+///*-----------solving the tab issue when they scroll together---*/
+//$('#tab1').on('tab:show', function () {
+//    myApp.alert('Tab 1 is visible');
+//});
+// 
+//$('#t1').on('click', function(){ 
+//window.scrollTo(0, 0);
+//       });
+//
+//$('#t2').on('click', function(){
+//window.scrollTo(0, 0); 
+//       });
+// /*-----------------------------------------*/
 
-$('#t2').on('click', function(){
-$('.page-content').css('overflow', 'unset');    
-$('.page-content').css('overflow', 'scroll');  
-       });
- /*-----------------------------------------*/
 
+$('#t1').on('click', function () {
+    console.log('tab1');
+    $('.page-content').scrollTop(0);
+    $(this).scrollTop(0); 
+});
+$('#t2').on('click', function () {
+    console.log('tab2');
+    $('.page-content').scrollTop(0);
+    $(this).scrollTop(0);  
+});
+$('#t3').on('click', function () {
+   console.log('tab3');
+    $('.page-content').scrollTop(0);
+    $(this).scrollTop(0); 
+}); 
 
 
 
