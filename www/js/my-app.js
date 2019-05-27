@@ -280,14 +280,16 @@ function openModal(Sindex){
  
 /*-----------solving the tab issue when they scroll together---*/
   $('#tab3').on('click', function(){
-  $('.page-content').css('overflow', 'unset');              
+  $('.page-content').css('overflow', 'unset !important');              
           });
 $('#tab1').on('click', function(){
-$('.page-content').css('overflow', 'scroll');  
+ $('.page-content').css('overflow', 'unset !important');    
+$('.page-content').css('overflow', 'scroll !important');  
        });
 
 $('#tab2').on('click', function(){
-$('.page-content').css('overflow', 'scroll');  
+ $('.page-content').css('overflow', 'unset !important');    
+$('.page-content').css('overflow', 'scroll !important');  
        });
  /*-----------------------------------------*/
 
