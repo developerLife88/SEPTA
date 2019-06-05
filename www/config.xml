@@ -36,7 +36,7 @@
 <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png"/>
 <splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png"/>
 <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png"/>
-        <preference name="android-minSdkVersion" value="26" />
+        <preference name="android-minSdkVersion" value="28" />
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
