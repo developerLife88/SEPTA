@@ -21,6 +21,7 @@ $$(document).on('deviceready', function() {
     $('#stationLIST').html(" ");
     getStationfromLS();
 
+    
 });     
 /*----------------------------------------------------*/
 
@@ -64,6 +65,8 @@ AddStaionToLcalStorage(staionOBJ);
 
 /*--------------fetching the json-Object------------------*/
                $$('#fetchTrainDetails').on('click', function(){
+                myApp.popup('.m2');
+                   
                 myApp.showPreloader();    
                var stationNumber = $$('#stations').val();
                 $$.ajax({
@@ -265,6 +268,7 @@ function openModal(Sindex){
     
  
       myApp.popup('.m1');
+    
     var pickedStation = 0;
     
     console.log(Sindex);
