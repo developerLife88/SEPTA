@@ -72,7 +72,7 @@ AddStaionToLcalStorage(staionOBJ);
                 $$.ajax({
                     type: 'GET',
                     dataType: "jsonp",
-                    url:"http://www3.septa.org/hackathon/Arrivals/" + stationNumber + "/10/",
+                    url:"https://www3.septa.org/hackathon/Arrivals/" + stationNumber + "/10/",
                     success: function(result){
                     $$('#schedule').html("");  // first        
                     parseJSON(result);   // second
@@ -321,7 +321,7 @@ $('#t3').on('click', function () {
                 $$.ajax({
                     type: 'GET',
                     dataType: "jsonp",
-                    url:"http://www3.septa.org/hackathon/Arrivals/" + number + "/10/",
+                    url:"https://www3.septa.org/hackathon/Arrivals/" + number + "/10/",
                     success: function(result2){
                     $$('#schedule2').html("");  // first
                      console.log(result2);
